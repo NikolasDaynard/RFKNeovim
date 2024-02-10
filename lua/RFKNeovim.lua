@@ -31,7 +31,7 @@ function M.handle_cursor_moved()
   -- start at 1, use plaintext? why is use plaintext an option, why would I ever not want that???
   if string.find(M.customCharacterset, char, 1, true) then
     local startPos, endPos = string.find(M.customCharacterset, char, 1, true)
-    print(M.linesForCharacters[2])
+    print(M.linesForCharacters[startPos])
   end
 end
 
