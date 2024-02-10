@@ -35,10 +35,10 @@ end
 
 -- Attach the Lua function to the CursorMoved event
 vim.cmd[[
-  augroup CursorMovedAutocmd
+  augroup cursor_moved
   autocmd!
-  autocmd CursorMoved lua require'RFKNeovim'.handle_cursor_moved()
-  augroup END
+  autocmd CursorMoved execute 'lua require'RFKNeovim'.handle_cursor_moved()'
+  augroup end
 ]]
 -- vim.cmd[[
 --   augroup cursor_moved
