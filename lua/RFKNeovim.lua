@@ -9,7 +9,7 @@ end
 
 -- Define a Lua function to handle cursor movement
 function M.handle_cursor_moved()
-  print(vim.cmd(getline('.')[col('.') - 1]))
+  print(vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.') + 1, vim.fn.col('.') + 1))
 end
 
 -- Attach the Lua function to the CursorMoved event
