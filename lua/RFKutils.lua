@@ -2,31 +2,19 @@
 
 local M = {}
 
-function M.LoadFileLine(line) -- WIP
-  local file = io.open("things.txt", "r")
+local things = require'things'
 
-  if file then
-    -- Read the specified line
-    local readLine
-    for i = 1, line do
-      readLine = file:read()
-      if not readLine then
-        break  -- Stop if end of file is reached before desired line
-      end
-    end
-
-    -- Close the file
-    file:close()
-
-    -- Check if the line was read successfully
-    if readLine then
-      return readLine
-    else
-      print("End of file reached or error reading the line.")
-    end
-  else
-    print("Failed to open file.")
+-- rand() % 16 = 0-15
+function M.generateRandomLineForCharacters(characterSet)
+  local usedLines = {}
+  for i = 1, #characterSet do
+    local char = characterSet:sub(i,i)
+    -- local randomLine(vim.cmd(rand() % things.getThingsLength)) + 1
+    -- if !usedLines.contains(randomLine) then
+      usedLines.append((rand() % things.getThingsLength) + 1) -- indexed from 1
+    -- end
   end
+  return usedLines
 end
 
 return M

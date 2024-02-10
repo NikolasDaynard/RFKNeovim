@@ -4,6 +4,7 @@ function M.getData(line)
 
   return M.RFKthings[line]
 end
+
 function M.getThingsLength()
 
   return #M.RFKthings
