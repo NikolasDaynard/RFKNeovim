@@ -2,19 +2,13 @@
 
 local M = {}
 
--- checks if other buffers are open
-function M.loadLine(line)
-
-end
-
-
-function M.loadLineFromFile(line) -- WIP
+function M.closeAllOpenTerminals(line) -- WIP
   local file = io.open("things.txt", "r")
 
   if file then
     -- Read the specified line
     local readLine
-    for i = 1, 3 do
+    for i = 1, line do
       readLine = file:read()
       if not readLine then
         break  -- Stop if end of file is reached before desired line
