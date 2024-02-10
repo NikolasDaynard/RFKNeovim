@@ -7,10 +7,6 @@ function M.setup(options)
 
 end
 
-function M.on_mouse_move()
-  -- Your code here
-  print("Mouse moved!")
-end
 vim.cmd([[
 function! HandleCursorMoved()
   " Your custom actions here
@@ -18,5 +14,7 @@ function! HandleCursorMoved()
   echo "Cursor moved to line " . line('.') . " column " . col('.')
 endfunction
 ]])
+
+autocmd CursorMoved * call HandleCursorMoved()
 
 return M
