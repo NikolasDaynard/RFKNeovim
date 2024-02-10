@@ -37,9 +37,10 @@ end
 vim.api.nvim_exec([[
   augroup CursorMovedAutocmd
   autocmd!
-  autocmd CursorMoved \* lua require'RFKNeovim'.handle_cursor_moved()
+  autocmd CursorMoved '*' lua require'RFKNeovim'.handle_cursor_moved()
   augroup END
 ]], false)
+
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
 
 return M
