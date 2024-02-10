@@ -19,10 +19,23 @@ M.RFKthings = {
   "It's Neovim running on a Nintendo 3DS",
   "It's a colorscheme with a contrast rating of 2.3",
   "It's a terminal with 256 colors",
+  "It's VSCode on an old computer. On trying to run it, it crashes",
+  "It's a very large number",
+  "It's a video essay comparing the 2017 and 2021 versions of the same game, but the game has no changes",
+  "It's the Game Of Life",
+  "It's a spritesheet of a 2d dungeon crawler",
+  "It's the ID to a pull request that was closed without being merged",
+  "It's glass with an IOR of 1.45",
 
-  
   "There seems to be nothing but noise here",
-  -- Add more data as needed
+  "There it goes again",
+
+  "10,000 instances of a AWS server",
+
+  "A snippet of broken vimscript",
+  "A noisy diffusion model",
+
+  "Some chocolates",
 }
 
 return M
