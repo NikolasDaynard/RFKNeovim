@@ -19,17 +19,16 @@ function M.setup(options)
     M.limit_Characterset = true
   else
     M.customCharacterset =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_!`~@#$%^&*()-=+{}\\|;:\'\",<.>/?'
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_!`~@#$%^&*()-=+[]{}\\|;:\'\",<.>/?'
   end
 end
 
 -- Define a Lua function to handle cursor movement
 function M.handle_cursor_moved()
   local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
-  if string.find(M.customCharacterset, char) ~= nil then
-    print(things.getData(2))
-
-  end
+  -- if string.find(M.customCharacterset, char) ~= nil then
+  --   print(things.getData(2))
+  -- end
 end
 
 -- Attach the Lua function to the CursorMoved event
