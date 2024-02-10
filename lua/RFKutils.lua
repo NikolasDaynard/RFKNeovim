@@ -32,7 +32,7 @@ function M.highlightPoint(x, y)
   }
 
   -- Add highlight to the specified point
-  vim.api.nvim_buf_add_highlight(bufnr, -1, highlight_group, x - 1, y - 1, y, -1)
+  vim.api.nvim_buf_add_highlight(bufnr, -1, highlight_group, x - 1, y - 1, y)
 end
 
 return M
