@@ -1,5 +1,12 @@
 local M = {}
 
+local M.things = {
+  "data1",
+  "data2",
+  "data3",
+  -- Add more data as needed
+}
+
 function M.getData(line)
 
   return M.things[line]
@@ -9,11 +16,5 @@ function M.getThingsLength()
   return #M.things
 end
 
-local M.things = {
-  "data1",
-  "data2",
-  "data3",
-  -- Add more data as needed
-}
 
 return M
