@@ -2,9 +2,6 @@
 
 local M = {}
 
-local utils = require'utils'
-local vendorDep = require'vendorDep'
-
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
 
