@@ -7,14 +7,19 @@ function M.setup(options)
 
 end
 
-vim.cmd([[
-function! HandleCursorMoved()
-  " Your custom actions here
-  " For example, echoing the cursor position
-  echo "Cursor moved to line " . line('.') . " column " . col('.')
-endfunction
-]])
+-- Define a Lua function to handle cursor movement
+local function handle_cursor_moved()
+  -- Your custom actions here
+  -- For example, echoing the cursor position
+  print("Cursor moved to line " .. vim.fn.line('.') .. " column " .. vim.fn.col('.'))
+end
 
-autocmd CursorMoved * call HandleCursorMoved()
+-- Attach the Lua function to the CursorMoved event
+vim.api.nvim_exec([[
+  augroup CursorMovedAutocmd
+  autocmd!
+  autocmd CursorMoved * lua handle_cursor_moved()
+  augroup END
+]], false)
 
 return M
