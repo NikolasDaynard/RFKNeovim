@@ -45,5 +45,6 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
+vim.cmd([[command! RFK lua require'RFKutils'.highlightPoint(1, 1)]])
 
 return M
