@@ -21,7 +21,7 @@ function M.loadLine(line)
 
     -- Check if the line was read successfully
     if readLine then
-      print("Line from file:", readLine)
+      return readLine
     else
       print("End of file reached or error reading the line.")
     end
