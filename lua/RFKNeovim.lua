@@ -34,13 +34,18 @@ function M.handle_cursor_moved()
 end
 
 -- Attach the Lua function to the CursorMoved event
-vim.api.nvim_exec([[
+vim.cmd[[
   augroup CursorMovedAutocmd
   autocmd!
   autocmd CursorMoved lua require'RFKNeovim'.handle_cursor_moved()
   augroup END
-]], false)
-
+]]
+-- vim.cmd[[
+--   augroup cursor_moved
+--     autocmd!
+--     autocmd CursorMoved FileName source <afile> | execute 'lua foo(arg1,arg2)'
+--   augroup end
+-- ]]
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
 
 return M
