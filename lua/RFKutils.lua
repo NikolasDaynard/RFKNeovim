@@ -5,6 +5,7 @@ local M = {}
 local things = require'RFKthings'
 
 function M.generateRandomLineForCharacters(characterSet)
+  math.randomseed(os.time())
   local usedLines = {}
   for i = 1, #characterSet do
     local char = characterSet:sub(i,i)
