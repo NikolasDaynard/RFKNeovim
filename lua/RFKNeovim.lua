@@ -2,7 +2,7 @@
 
 local M = {}
 
-local utils = require'utils'
+local utils = require'RFKutils'
 
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
