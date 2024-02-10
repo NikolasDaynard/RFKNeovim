@@ -27,17 +27,17 @@ end
 function M.handle_cursor_moved()
   local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
   if string.find(M.customCharacterset, char) ~= nil then
-    vim.cmd('echomsg' .. things.getData(2))
+    vim.cmd('echomsg ' .. things.getData(2))
   end
 end
 
--- Attach the Lua function to the CursorMoved event
--- vim.api.nvim_exec([[
---   augroup CursorMovedAutocmd
---   autocmd!
---   autocmd CursorMoved * lua require'RFKNeovim'.handle_cursor_moved()
---   augroup END
--- ]], false)
-vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
+Attach the Lua function to the CursorMoved event
+vim.api.nvim_exec([[
+  augroup CursorMovedAutocmd
+  autocmd!
+  autocmd CursorMoved * lua require'RFKNeovim'.handle_cursor_moved()
+  augroup END
+]], false)
+-- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
 
 return M
