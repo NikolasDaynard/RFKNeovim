@@ -4,7 +4,6 @@ local M = {}
 
 function M.LoadFileLine(line) -- WIP
   local file = io.open("things.txt", "r")
-  print('wriung')
 
   if file then
     -- Read the specified line
