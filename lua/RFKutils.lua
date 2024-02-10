@@ -2,7 +2,7 @@
 
 local M = {}
 
-local things = require'things'
+local things = require'RFKthings'
 
 function M.generateRandomLineForCharacters(characterSet)
   local usedLines = {}

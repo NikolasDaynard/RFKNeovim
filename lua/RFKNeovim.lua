@@ -3,7 +3,7 @@
 local M = {}
 
 local utils = require'RFKutils'
-local things = require'things'
+local things = require'RFKthings'
 
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
