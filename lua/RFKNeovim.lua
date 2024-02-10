@@ -9,9 +9,7 @@ end
 
 -- Define a Lua function to handle cursor movement
 function M.handle_cursor_moved()
-  -- Your custom actions here
-  -- For example, echoing the cursor position
-  print("Cursor moved to line " .. vim.fn.line('.') .. " column " .. vim.fn.col('.'))
+  print(vim.cmd(getline('.')[col('.') - 1]))
 end
 
 -- Attach the Lua function to the CursorMoved event
