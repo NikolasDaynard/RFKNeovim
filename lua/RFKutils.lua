@@ -10,7 +10,7 @@ function M.generateRandomLineForCharacters(characterSet)
     local char = characterSet:sub(i,i)
     -- local randomLine(vim.cmd(rand() % things.getThingsLength)) + 1
     -- if !usedLines.contains(randomLine) then
-      usedLines.append(math.random(1, things.getThingsLength())) -- indexed from 1
+      usedLines[i] = (math.random(1, things.getThingsLength())) -- indexed from 1
     -- end
   end
   return usedLines
