@@ -32,7 +32,7 @@ function M.handle_cursor_moved()
   if string.find(M.customCharacterset, char, 1, true) then
     local startPos, endPos = string.find(M.customCharacterset, char, 1, true)
     local thingIndex = M.linesForCharacters[startPos]
-    print(getThing(thingIndex))
+    print(things.getThing(thingIndex))
   end
 end
 
