@@ -29,6 +29,7 @@ function M.handle_cursor_moved()
   if string.find(M.customCharacterset, char) ~= nil then
     -- vim.cmd('echomsg "' .. things.getData(2) .. '"')
     print(things.getData(2))
+
   end
 end
 
@@ -36,7 +37,7 @@ end
 vim.api.nvim_exec([[
   augroup CursorMovedAutocmd
   autocmd!
-  autocmd CursorMoved * lua require'RFKNeovim'.handle_cursor_moved()
+  autocmd CursorMoved \* lua require'RFKNeovim'.handle_cursor_moved()
   augroup END
 ]], false)
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
