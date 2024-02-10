@@ -2,7 +2,13 @@
 
 local M = {}
 
-function M.loadLine(line) -- WIP
+-- checks if other buffers are open
+function M.loadLine(line)
+
+end
+
+
+function M.loadLineFromFile(line) -- WIP
   local file = io.open("things.txt", "r")
 
   if file then
