@@ -2,7 +2,7 @@
 
 local M = {}
 
-function M.closeAllOpenTerminals(line) -- WIP
+function M.LoadFileLine(line) -- WIP
   local file = io.open("things.txt", "r")
 
   if file then
