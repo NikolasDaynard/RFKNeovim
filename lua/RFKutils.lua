@@ -28,7 +28,7 @@ function M.highlightPoint(x, y)
       ctermfg = "red",  -- Foreground color (for terminal)
       ctermbg = "none", -- Background color (for terminal)
       gui = "",       -- GUI attributes (e.g., "bold", "underline")
-      cterm = "",     -- Terminal attributes (e.g., "bold", "underline")
+      cterm = "bold",     -- Terminal attributes (e.g., "bold", "underline")
   }
 
   -- Add highlight to the specified point
