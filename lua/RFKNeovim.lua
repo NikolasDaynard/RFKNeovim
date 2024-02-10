@@ -3,6 +3,7 @@
 local M = {}
 
 local utils = require'RFKutils'
+local things = require'things'
 
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
@@ -26,7 +27,7 @@ end
 function M.handle_cursor_moved()
   local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
   if string.find(M.customCharacterset, char) ~= nil then
-    vim.cmd('echomsg' .. utils.LoadFileLine(2))
+    vim.cmd('echomsg' .. things.getData(2))
   end
 end
 
