@@ -1,20 +1,19 @@
 local M = {}
 
-local M.things = {
+function M.getData(line)
+
+  return M.RFKthings[line]
+end
+function M.getThingsLength()
+
+  return #M.RFKthings
+end
+
+M.RFKthings = {
   "data1",
   "data2",
   "data3",
   -- Add more data as needed
 }
-
-function M.getData(line)
-
-  return M.things[line]
-end
-function M.getThingsLength()
-
-  return #M.things
-end
-
 
 return M
