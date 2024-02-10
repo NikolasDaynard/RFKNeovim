@@ -1,6 +1,6 @@
 local M = {}
 
-function M.getData(line)
+function M.getThing(line)
 
   return M.RFKthings[line]
 end
