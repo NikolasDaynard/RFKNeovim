@@ -7,16 +7,14 @@ function M.setup(options)
 
 end
 
-function M.on_mouse_move()
-  -- Your code here
-  print("Mouse moved!")
-end
+vim.cmd([[
+function! HandleCursorMoved()
+  " Your custom actions here
+  " For example, echoing the cursor position
+  echo "Cursor moved to line " . line('.') . " column " . col('.')
+endfunction
+]])
 
-vim.cmd[[
-  augroup cursor_moved
-    autocmd!
-    autocmd CursorMoved FileName source <afile> | execute 'lua foo(arg1,arg2)'
-  augroup end
-]]
+autocmd CursorMoved * call HandleCursorMoved()
 
 return M
