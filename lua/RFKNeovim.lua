@@ -31,7 +31,7 @@ function M.handle_cursor_moved()
   end
 end
 
-Attach the Lua function to the CursorMoved event
+-- Attach the Lua function to the CursorMoved event
 vim.api.nvim_exec([[
   augroup CursorMovedAutocmd
   autocmd!
