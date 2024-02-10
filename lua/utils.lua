@@ -8,7 +8,7 @@ function M.loadLine(line)
 end
 
 
-function M.closeAllOpenTerminals() -- WIP
+function M.closeAllOpenTerminals(line) -- WIP
   local file = io.open("things.txt", "r")
 
   if file then
