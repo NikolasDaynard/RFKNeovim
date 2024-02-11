@@ -54,6 +54,6 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
-vim.cmd([[command! RFK lua toggle_enabled()]])
+vim.cmd([[command! RFK lua require'RFKNeovim'.toggle_enabled()]])
 
 return M
