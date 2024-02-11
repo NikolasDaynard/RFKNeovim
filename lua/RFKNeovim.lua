@@ -7,6 +7,11 @@ local things = require'RFKthings'
 
 local enabled = false
 
+function M.toggle_enabled()
+  enabled = not enabled
+  print("ROBOT: TIME TO FIND:", enabled)
+end
+
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
 
@@ -49,6 +54,6 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
-vim.cmd([[command! RFK lua enabled = not enabled]])
+vim.cmd([[command! RFK lua toggle_enabled()]])
 
 return M
