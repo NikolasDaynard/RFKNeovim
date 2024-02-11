@@ -10,8 +10,8 @@ local enabled = false
 function M.toggle_enabled()
   enabled = not enabled
   -- print("ROBOT: TIME TO FIND:", enabled)
-  M.customCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
-  M.linesForCharacters = utils.generateRandomLineForCharacters(M.customCharacterset)
+  M.bufferCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
+  M.linesForCharacters = utils.generateRandomLineForCharacters(M.bufferCharacterset)
 end
 
 function M.setup(options)
@@ -30,8 +30,8 @@ function M.setup(options)
     M.customCharacterset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_!`~@#$%^&*()-=+*/[]{}\\|;:\'\",.<>?-'
   end
-  M.customCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
-  M.linesForCharacters = utils.generateRandomLineForCharacters(M.customCharacterset)
+  M.bufferCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
+  M.linesForCharacters = utils.generateRandomLineForCharacters(M.bufferCharacterset)
 end
 
 function M.handle_cursor_moved()
@@ -39,8 +39,8 @@ function M.handle_cursor_moved()
     -- get the character under the cursor
     local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
     -- start at 1, use plaintext? why is use plaintext an option, why would I ever not want that???
-    if string.find(M.customCharacterset, char, 1, true) then
-      local startPos, endPos = string.find(M.customCharacterset, char, 1, true)
+    if string.find(M.bufferCharacterset, char, 1, true) then
+      local startPos, endPos = string.find(M.bufferCharacterset, char, 1, true)
       local thingIndex = M.linesForCharacters[startPos]
       print(things.getThing(thingIndex))
     end
