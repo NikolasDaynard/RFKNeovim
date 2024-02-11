@@ -9,7 +9,7 @@ local enabled = false
 
 function M.toggle_enabled()
   enabled = not enabled
-  -- print("ROBOT: TIME TO FIND:", enabled)
+  print("ROBOT: TIME TO FIND:", enabled)
   M.bufferCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
   M.linesForCharacters = utils.generateRandomLineForCharacters(M.bufferCharacterset)
 end
