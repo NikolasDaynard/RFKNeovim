@@ -11,6 +11,7 @@ function M.getThingsLength()
 end
 
 M.RFKthings = {
+  "It's a kitten!",
   "It's an animal! Sadly though, not the one you are looking for",
   "It's a very riced unix system",
   "It's nothing, just some text",
@@ -26,6 +27,8 @@ M.RFKthings = {
   "It's a spritesheet of a 2d dungeon crawler",
   "It's the ID to a pull request that was closed without being merged",
   "It's glass with an IOR of 1.45",
+  "It's a bit of scrap metal arranged in a way that looks like a robot",
+  "It's a Neovim config file that has been split into 1000 different files, each containing one line",
 
   "There seems to be nothing but noise here",
   "There it goes again",
@@ -34,6 +37,10 @@ M.RFKthings = {
 
   "A snippet of broken vimscript",
   "A noisy diffusion model",
+  "A telescope sits here, with a note attached, reading \'Use: <leader>ff\'",
+
+  "An offical looking document, with the title: \"The 2024 FRC Game Manual\"",
+  "An old looking computer, running Windows 97, with the word retro written on it in block lettering",
 
   "Some chocolates",
 }
