@@ -16,7 +16,8 @@ function M.generateRandomLineForCharacters(characterSet)
   end
   rand = math.random(1, #characterSet)
   usedLines[rand] = 1 -- set one to be the kitten
-  print(rand)
+  -- print(rand)
+  print(characterSet)
   return usedLines
 end
 
