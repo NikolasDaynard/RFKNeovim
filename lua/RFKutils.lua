@@ -16,8 +16,26 @@ function M.generateRandomLineForCharacters(characterSet)
   end
   rand = math.random(1, #characterSet)
   usedLines[rand] = 1 -- set one to be the kitten
-  print(rand)
+  -- print(rand)
+  -- print(characterSet, rand)
   return usedLines
+end
+
+function M.getCharactersInBufferUsedInCharacterSet(characterSet) 
+  str = getBufferString()
+  charactersInBuffer = ''
+  for i = 1, #str do
+    char = str:sub(i,i)
+    if string.find(characterSet, char, 1, true) and not string.find(charactersInBuffer, char, 1, true) then
+      charactersInBuffer = charactersInBuffer .. char
+    end
+  end
+  return charactersInBuffer
+end
+
+function getBufferString() 
+  local content = vim.api.nvim_buf_get_lines(0, 0, vim.api.nvim_buf_line_count(0), false)
+  return table.concat(content, "\n")
 end
 
 return M
