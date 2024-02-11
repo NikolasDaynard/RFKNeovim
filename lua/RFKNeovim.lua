@@ -10,6 +10,7 @@ local enabled = false
 function M.toggle_enabled()
   enabled = not enabled
   print("ROBOT: TIME TO FIND:", enabled)
+  M.linesForCharacters = utils.generateRandomLineForCharacters(getCharactersInBufferUsedInCharacterSet(M.customCharacterset))
 end
 
 function M.setup(options)
@@ -29,7 +30,7 @@ function M.setup(options)
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_!`~@#$%^&*()-=+*/[]{}\\|;:\'\",.<>?-'
   end
 
-  M.linesForCharacters = utils.generateRandomLineForCharacters(M.customCharacterset)
+  M.linesForCharacters = utils.generateRandomLineForCharacters(getCharactersInBufferUsedInCharacterSet(M.customCharacterset))
 end
 
 function M.handle_cursor_moved()

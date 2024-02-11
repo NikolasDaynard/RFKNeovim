@@ -20,4 +20,21 @@ function M.generateRandomLineForCharacters(characterSet)
   return usedLines
 end
 
+function M.getCharactersInBufferUsedInCharacterSet(characterSet) 
+  str = getBufferString()
+  charactersInBuffer = ''
+  for i = 1, #str do
+    char = str:sub(i,i)
+    if string.find(characterSet, char, 1, true) then
+      charactersInBuffer = charactersInBuffer .. char
+    end
+  end
+  return charactersInBuffer
+end
+
+local function getBufferString() 
+  local content = vim.api.nvim_buf_get_lines(0, 0, vim.api.nvim_buf_line_count(0), false)
+  return table.concat(content, "\n")
+end
+
 return M
