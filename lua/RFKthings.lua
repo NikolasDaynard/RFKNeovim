@@ -38,6 +38,7 @@ M.RFKthings = {
   "A snippet of broken vimscript",
   "A noisy diffusion model",
   "A telescope sits here, with a note attached, reading \'Use: <leader>ff\'",
+  "A 3d port of a 2d game",
 
   "An offical looking document, with the title: \"The 2024 FRC Game Manual\"",
   "An old looking computer, running Windows 97, with the word retro written on it in block lettering",
