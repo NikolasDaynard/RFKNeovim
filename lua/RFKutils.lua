@@ -16,23 +16,5 @@ function M.generateRandomLineForCharacters(characterSet)
   end
   return usedLines
 end
-function M.highlightPoint(x, y)
-  -- Define the buffer number of the current buffer
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  -- Define the highlight group and attributes
-  local highlight_group = "MyHighlightGroup"
-  local attributes = {
-      guifg = "red",  -- Foreground color (for GUI)
-      guibg = "none", -- Background color (for GUI)
-      ctermfg = "red",  -- Foreground color (for terminal)
-      ctermbg = "none", -- Background color (for terminal)
-      gui = "",       -- GUI attributes (e.g., "bold", "underline")
-      cterm = "bold",     -- Terminal attributes (e.g., "bold", "underline")
-  }
-
-  -- Add highlight to the specified point
-  vim.api.nvim_buf_add_highlight(bufnr, -1, highlight_group, x - 1, y - 1, y)
-end
 
 return M

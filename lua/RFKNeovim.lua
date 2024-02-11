@@ -5,6 +5,8 @@ local M = {}
 local utils = require'RFKutils'
 local things = require'RFKthings'
 
+local enabled = false
+
 function M.setup(options)
   M.objectsPer100Lines = options.objectsPer100Lines or M.objectsPer100Lines or 20
 
@@ -26,13 +28,15 @@ function M.setup(options)
 end
 
 function M.handle_cursor_moved()
-  -- get the character under the cursor
-  local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
-  -- start at 1, use plaintext? why is use plaintext an option, why would I ever not want that???
-  if string.find(M.customCharacterset, char, 1, true) then
-    local startPos, endPos = string.find(M.customCharacterset, char, 1, true)
-    local thingIndex = M.linesForCharacters[startPos]
-    print(things.getThing(thingIndex))
+  if enabled then
+    -- get the character under the cursor
+    local char = vim.api.nvim_buf_get_lines(0, vim.fn.line('.') - 1, vim.fn.line('.'), true)[1]:sub(vim.fn.col('.'), vim.fn.col('.'))
+    -- start at 1, use plaintext? why is use plaintext an option, why would I ever not want that???
+    if string.find(M.customCharacterset, char, 1, true) then
+      local startPos, endPos = string.find(M.customCharacterset, char, 1, true)
+      local thingIndex = M.linesForCharacters[startPos]
+      print(things.getThing(thingIndex))
+    end
   end
 end
 
@@ -45,6 +49,6 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- vim.cmd([[command! RFK lua require'RFKNeovim'.handle_cursor_moved()]])
-vim.cmd([[command! RFK lua require'RFKutils'.highlightPoint(1, 1)]])
+vim.cmd([[command! RFK lua enabled = not enabled]])
 
 return M

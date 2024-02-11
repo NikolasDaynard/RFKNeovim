@@ -21,7 +21,7 @@ M.RFKthings = {
   "It's a terminal with 256 colors",
   "It's VSCode on an old computer. On trying to run it, it crashes",
   "It's a very large number",
-  "It's a video essay comparing the 2017 and 2021 versions of the same game, but the game has no changes",
+  "It's a video essay comparing the 2017 and 2021 versions of the same game, but the game is the exact same",
   "It's the Game Of Life",
   "It's a spritesheet of a 2d dungeon crawler",
   "It's the ID to a pull request that was closed without being merged",
