@@ -25,7 +25,7 @@ function M.getCharactersInBufferUsedInCharacterSet(characterSet)
   charactersInBuffer = ''
   for i = 1, #str do
     char = str:sub(i,i)
-    if string.find(characterSet, char, 1, true) then
+    if string.find(characterSet, char, 1, true) and not string.find(charactersInBuffer, char, 1, true) then
       charactersInBuffer = charactersInBuffer .. char
     end
   end
