@@ -32,7 +32,7 @@ function M.getCharactersInBufferUsedInCharacterSet(characterSet)
   return charactersInBuffer
 end
 
-local function getBufferString() 
+function getBufferString() 
   local content = vim.api.nvim_buf_get_lines(0, 0, vim.api.nvim_buf_line_count(0), false)
   return table.concat(content, "\n")
 end
