@@ -11,7 +11,8 @@ function M.toggle_enabled()
   enabled = not enabled
   print("ROBOT: TIME TO FIND:", enabled)
   M.customCharacterset = utils.getCharactersInBufferUsedInCharacterSet(M.customCharacterset)
-  M.linesForCharacters = utils.generateRandomLineForCharacters(M.customCharacterset)
+  print(M.customCharacterset)
+  -- M.linesForCharacters = utils.generateRandomLineForCharacters(M.customCharacterset)
 end
 
 function M.setup(options)
