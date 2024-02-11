@@ -14,7 +14,9 @@ function M.generateRandomLineForCharacters(characterSet)
       usedLines[i] = (math.random(2, things.getThingsLength())) -- indexed from 2 because 1 is the kitten
     -- end
   end
-  usedLines[math.random(1, #characterSet)] = 1 -- set one to be the kitten
+  rand = math.random(1, #characterSet)
+  usedLines[rand] = 1 -- set one to be the kitten
+  print(rand)
   return usedLines
 end
 
