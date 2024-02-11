@@ -21,7 +21,7 @@ function M.setup(options)
     M.limit_Characterset = true
   end
   -- allow the user to set the a custom Characterset
-  M.customCharacterset = options.limit_Characterset
+  M.customCharacterset = options.customCharacterset
   if M.customCharacterset ~= nil then
     M.limit_Characterset = true
   else
